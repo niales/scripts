@@ -1,0 +1,69 @@
+#!/usr/bin/perl -w
+use strict;
+my $monitorId = "DP-1";
+
+my $num_args = $#ARGV + 1;
+if ($num_args > 1){
+    print "\nToo many argumnets!\n";
+    exit;
+}
+if ($num_args == 0){
+    print "\nToo few arguments!\n";
+    exit;
+}
+
+my $command = $ARGV[0];
+
+if($command eq "--toggle-monitor"){
+    my $connected = `xrandr --listmonitors | grep ${monitorId} | wc -l`;
+    
+    if($connected == 1){
+        system("xrandr --output ${monitorId} --off");
+    }
+    else{
+        system("xrandr --output ${monitorId} --mode 1920x1080 --pos 1920x0");
+    }
+    exit;
+}
+
+if($command eq "--off"){
+    if(isConnected()){
+        system("xrandr --output ${monitorId} --off");
+    } else {
+        print "Already off!\n";
+    }
+    
+    exit;
+}
+
+if($command eq "--on"){
+    if(!isConnected()){
+        system("xrandr --output ${monitorId} --mode 1920x1080 --pos 1920x0");
+    } else {
+        print "Already on!\n";
+    }
+    exit;
+}
+
+if($command eq "--status"){
+    
+    if(isConnected()){
+        print("connected\n");
+    } else {
+        print("disconnected\n");
+    }
+    exit;
+}
+
+print "Not a valid command!\n";
+exit;
+
+sub isConnected {
+    my $connected = `xrandr --listmonitors | grep ${monitorId} | wc -l`;
+
+    if($connected == 1){
+        return 1;
+    } else {
+        return 0;
+    }
+}
