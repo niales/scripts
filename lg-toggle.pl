@@ -6,7 +6,7 @@ chomp($running);
 
 if($running) {
     print "test1\n";
-    system("killall looking-glass-client");
+    system("killall looking-glass-c");
 } else {
     print "test NOT 1\n";
     exec("looking-glass-client -s -F");
