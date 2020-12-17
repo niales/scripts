@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 use strict;
-my $monitorId = "DP-1";
+my $monitorId = "HDMI-0";
 
 my $num_args = $#ARGV + 1;
 if ($num_args > 1){
