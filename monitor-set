@@ -21,7 +21,7 @@ if($command eq "--toggle-monitor"){
         system("xrandr --output ${monitorId} --off");
     }
     else{
-        system("xrandr --output ${monitorId} --mode 1920x1080 --pos 1920x0");
+        system("xrandr --output ${monitorId} --mode 2560x1440 --pos 2560x0 --rate 144");
     }
     exit;
 }
@@ -38,7 +38,7 @@ if($command eq "--off"){
 
 if($command eq "--on"){
     if(!isConnected()){
-        system("xrandr --output ${monitorId} --mode 1920x1080 --pos 1920x0");
+        system("xrandr --output ${monitorId} --mode 2560x1440 --pos 2560x0 --rate 144");
     } else {
         print "Already on!\n";
     }
@@ -46,7 +46,6 @@ if($command eq "--on"){
 }
 
 if($command eq "--status"){
-    
     if(isConnected()){
         print("connected\n");
     } else {
