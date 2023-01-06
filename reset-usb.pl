@@ -7,8 +7,8 @@ my ($bus, $dev, $output) = '' x 3;
 
 # Add devices here. They should match the output of the lsusb command
 my @devices = (
-  'Microsoft Corp. Xbox360 Controller',
-  'Logitech, Inc. Blue Microphones'
+  'Microsoft Corp. Xbox360 Controller'
+  #'Logitech, Inc. Blue Microphones'
 );
 
 foreach(@devices){

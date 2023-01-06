@@ -3,7 +3,32 @@ nvidia 2080 (23)
 	10de:10f7
 	10de:1ad6
 	10de:1ad7
+
+	10de:1e04,10de:10f7,10de:1ad6,10de:1ad7
 windrive (13)
 	144d:a808
 USB (29)
 	1022:145f
+
+
+nvidia 2060
+	10de:1f08
+	10de:10f9
+	10de:1ada
+	10de:1adb
+
+	10de:1f08,10de:10f9,10de:1ada,10de:1adb
+
+
+
+https://docs.google.com/spreadsheets/d/18pKAJ6Z2jFDsz2i3YsGZRiWFSwQWU-5Ck8VhwUpHe2A/edit?usp=sharing
+
+google-chrome --remote-debugging-port=9222 --user-data-dir=/tmp/blazor-chrome-debug http://localhost:5045/
+
+amd 7900 xtx
+	#1002:1478
+	#1002:1479
+	1002:744c
+	1002:ab30
+	1002:7446
+	1002:7444
